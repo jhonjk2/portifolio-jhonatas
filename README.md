@@ -1,9 +1,8 @@
 # Portfólio Jhonatas — Render + painel de administração
 
-Aplicação Node.js/Express com portfólio público, PostgreSQL e painel privado em `/admin`.
+#Aplicação Html, Css, JS 
 
 ## Requisitos
-- Node.js 20 ou superior
 - PostgreSQL
 
 ## Executar localmente
@@ -36,5 +35,4 @@ Não coloques `.env`, palavras-passe ou hashes em repositórios públicos. Usa a
 - `GET /admin/login`: login
 - `GET /admin`: painel protegido
 - `GET /api/projects`: projetos publicados (dados públicos)
-- O painel permite criar, editar, publicar/ocultar e eliminar projetos.
 - A imagem é indicada por URL HTTPS; o ficheiro não é carregado para o servidor.

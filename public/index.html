@@ -1,268 +1,459 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Portfólio de Jhonatas Moraes, estudante de Tecnologias e Programação de Sistemas de Informação.">
+  <meta name="theme-color" content="#090a0f">
+
   <title>Jhonatas Moraes | Desenvolvedor em formação</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <script src="projects.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Jhonatas Moraes, início">
-      <span class="brand-mark">JM</span>
-      <span>Jhonatas<span class="accent">.</span></span>
-    </a>
 
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <!-- CABEÇALHO -->
 
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="#sobre">Sobre</a>
-      <a href="#competencias">Competências</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contacto" class="nav-cta">Contacto ↗</a>
-    </nav>
+  <header class="header">
+    <div class="container nav-container">
+
+      <a href="#inicio" class="logo" aria-label="Jhonatas - Página inicial">
+        <span class="logo-mark">JM</span>
+        <span>Jhonatas<span class="logo-dot">.</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="main-nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#competencias">Competências</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contacto" class="nav-contact">Contacto</a>
+      </nav>
+
+    </div>
   </header>
 
   <main>
-    <!-- APRESENTAÇÃO -->
-    <section class="hero section" id="inicio">
-      <div class="hero-copy">
-        <p class="eyebrow">
-          <span class="status-dot"></span>
-          DISPONÍVEL PARA OPORTUNIDADES
-        </p>
 
-        <h1>
-          Olá, sou<br>
-          <span class="gradient-text">Jhonatas Moraes.</span>
-        </h1>
+    <!-- INÍCIO -->
 
-        <h2>
-          Estudante de programação
-          <span class="muted">|</span>
-          Desenvolvedor em formação
-        </h2>
+    <section class="hero" id="inicio">
 
-        <p class="intro">
-          Estou a construir o meu caminho na tecnologia, transformando
-          curiosidade em projetos e ideias em código. Este é o espaço
-          onde partilho a minha evolução.
-        </p>
+      <div class="container hero-container">
 
-        <div class="hero-actions">
-          <a class="button primary" href="#projetos">
-            Ver os meus projetos <span>↘</span>
-          </a>
+        <div class="hero-content">
 
-          <a class="button secondary" href="#contacto">
-            Entrar em contacto
-          </a>
-        </div>
+          <span class="eyebrow">
+            <span class="status-dot"></span>
+            ESTUDANTE DE PROGRAMAÇÃO
+          </span>
 
-        <div class="socials">
-          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        </div>
-      </div>
+          <h1>
+            Olá, sou <span>Jhonatas</span> Moraes.
+          </h1>
 
-      <div class="hero-art" aria-label="Elemento gráfico abstrato">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
+          <p class="hero-description">
+            Estudante de Tecnologias e Programação de Sistemas de Informação,
+            interessado no desenvolvimento de software, aplicações e soluções tecnológicas.
+          </p>
 
-        <div class="code-card">
-          <div class="code-top">
-            <i></i><i></i><i></i>
-            <span>developer.js</span>
+          <div class="hero-actions">
+
+            <a href="#projetos" class="btn btn-primary">
+              Ver projetos <span>↗</span>
+            </a>
+
+            <a href="#contacto" class="btn btn-secondary">
+              Entrar em contacto
+            </a>
+
           </div>
 
-          <pre><span class="code-purple">const</span> developer = {
-  name: <span class="code-green">'Jhonatas'</span>,
-  focus: <span class="code-green">'Software Development'</span>,
-  learning: [
-    <span class="code-green">'Java'</span>,
-    <span class="code-green">'C#'</span>,
-    <span class="code-green">'Python'</span>,
-    <span class="code-green">'JavaScript'</span>,
-    <span class="code-green">'SQL'</span>,
-    <span class="code-green">'PHP'</span>
-  ],
-  <span class="code-blue">building</span>: <span class="code-purple">true</span>
-};</pre>
+          <div class="hero-socials">
+
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+          </div>
+
         </div>
 
-        <span class="floating-tag tag-one">&lt;/&gt;</span>
-        <span class="floating-tag tag-two">IDEAS → CODE</span>
+        <!-- CARTÃO JAVA -->
+
+        <div class="hero-visual">
+
+          <div class="code-card">
+
+            <div class="code-card-header">
+
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="code-file-name">
+                <span class="java-icon">J</span>
+                Jhonatas.java
+              </div>
+
+              <span class="code-file-type">JAVA</span>
+
+            </div>
+
+            <div class="code-content">
+
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <code><span class="code-purple">public class</span> <span class="code-yellow">Jhonatas</span> {</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <code></code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <code>  <span class="code-purple">private String</span> nome = <span class="code-green">"Jhonatas"</span>;</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <code>  <span class="code-purple">private String</span> objetivo =</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <code>    <span class="code-green">"Aprender e evoluir"</span>;</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">6</span>
+                <code></code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">7</span>
+                <code>  <span class="code-purple">private String[]</span> tecnologias = {</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">8</span>
+                <code>    <span class="code-green">"Java"</span>, <span class="code-green">"C#"</span>, <span class="code-green">"Python"</span>,</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">9</span>
+                <code>    <span class="code-green">"JavaScript"</span>, <span class="code-green">"PHP"</span>,</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">10</span>
+                <code>    <span class="code-green">"SQL"</span>, <span class="code-green">"Kotlin"</span></code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">11</span>
+                <code>  };</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">12</span>
+                <code></code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">13</span>
+                <code>  <span class="code-purple">public void</span> <span class="code-yellow">evoluir</span>() {</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">14</span>
+                <code>    <span class="code-comment">// Um passo de cada vez.</span></code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">15</span>
+                <code>  }</code>
+              </div>
+
+              <div class="code-line">
+                <span class="line-number">16</span>
+                <code>}</code>
+              </div>
+
+              <span class="code-cursor"></span>
+
+            </div>
+
+            <div class="code-card-footer">
+
+              <span>
+                <span class="editor-status-dot"></span>
+                Em aprendizagem
+              </span>
+
+              <span>Java · UTF-8</span>
+
+            </div>
+
+          </div>
+
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+        </div>
+
       </div>
 
-      <a class="scroll-hint" href="#sobre">SCROLL PARA EXPLORAR ↓</a>
     </section>
 
     <!-- SOBRE MIM -->
-    <section class="section about" id="sobre">
-      <div class="section-label">01 / SOBRE MIM</div>
 
-      <div>
-        <h2 class="section-title">
-          A aprender hoje.<br>
-          <span class="muted">A construir o amanhã.</span>
-        </h2>
+    <section class="section" id="sobre">
 
-        <p class="section-text">
-          Sou estudante de Tecnologias e Programação de Sistemas de
-          Informação. Tenho interesse em desenvolvimento de software,
-          programação backend, desenvolvimento web e bases de dados.
-          Gosto de aprender criando: experimentar, resolver problemas
-          e melhorar um pouco a cada projeto.
-        </p>
+      <div class="container">
 
-        <p class="section-text">
-          Procuro uma oportunidade para iniciar a minha carreira na
-          área de tecnologia, contribuir com dedicação e continuar
-          a desenvolver as minhas competências numa equipa.
-        </p>
+        <div class="section-heading">
+          <span class="section-number">01 / SOBRE</span>
+          <h2>Um pouco sobre mim</h2>
+        </div>
+
+        <div class="about-content">
+
+          <p>
+            Sou estudante de Tecnologias e Programação de Sistemas de Informação
+            no CINEL, com interesse pelo desenvolvimento de software e pela
+            criação de soluções tecnológicas.
+          </p>
+
+          <p>
+            Estou a desenvolver competências em diferentes linguagens de
+            programação, bases de dados e tecnologias de desenvolvimento web
+            e aplicações.
+          </p>
+
+          <p>
+            Procuro evoluir continuamente através da aprendizagem e da
+            realização de projetos práticos.
+          </p>
+
+        </div>
+
       </div>
+
     </section>
 
     <!-- COMPETÊNCIAS -->
-    <section class="section skills" id="competencias">
-      <div class="section-label">02 / COMPETÊNCIAS</div>
 
-      <div>
-        <h2 class="section-title">
-          Tecnologias que estou<br>
-          <span class="muted">a aprender e explorar.</span>
-        </h2>
+    <section class="section section-alt" id="competencias">
 
-        <p class="section-text">
-          Ao longo da minha formação académica e dos meus projetos
-          pessoais, tenho desenvolvido conhecimentos em diferentes
-          linguagens de programação, tecnologias web, bases de dados
-          e ferramentas de desenvolvimento.
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-number">02 / COMPETÊNCIAS</span>
+
+          <h2>Tecnologias que estou a aprender</h2>
+
+          <p>
+            Tecnologias e ferramentas com as quais tenho desenvolvido
+            conhecimentos durante a minha formação.
+          </p>
+
+        </div>
+
+        <div class="skill-grid">
+
+          <div class="skill-category">
+
+            <h3>Linguagens de programação</h3>
+
+            <div class="skill-list">
+              <span>Java</span>
+              <span>C#</span>
+              <span>Python</span>
+              <span>PHP</span>
+              <span>JavaScript</span>
+              <span>Kotlin</span>
+            </div>
+
+          </div>
+
+          <div class="skill-category">
+
+            <h3>Desenvolvimento web</h3>
+
+            <div class="skill-list">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>EJS</span>
+              <span>XML</span>
+            </div>
+
+          </div>
+
+          <div class="skill-category">
+
+            <h3>Bases de dados</h3>
+
+            <div class="skill-list">
+              <span>SQL</span>
+              <span>MySQL</span>
+              <span>PostgreSQL</span>
+              <span>NoSQL</span>
+            </div>
+
+          </div>
+
+          <div class="skill-category">
+
+            <h3>Ferramentas e tecnologias</h3>
+
+            <div class="skill-list">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>VS Code</span>
+              <span>Android Studio</span>
+              <span>XAMPP</span>
+              <span>Packet Tracer</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <p class="skills-note">
+          Todas estas tecnologias encontram-se em fase de aprendizagem
+          e desenvolvimento de competências.
         </p>
 
-        <h3 class="skill-category">Linguagens de programação</h3>
-
-        <div class="skill-grid">
-          <div class="skill"><b>Java</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>C#</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>Python</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>PHP</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>JavaScript</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>Kotlin</b><span>Em aprendizagem</span></div>
-        </div>
-
-        <h3 class="skill-category">Desenvolvimento web</h3>
-
-        <div class="skill-grid">
-          <div class="skill"><b>HTML5</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>CSS3</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>EJS</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>XML</b><span>Em aprendizagem</span></div>
-        </div>
-
-        <h3 class="skill-category">Bases de dados</h3>
-
-        <div class="skill-grid">
-          <div class="skill"><b>SQL</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>MySQL</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>PostgreSQL</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>NoSQL</b><span>Em aprendizagem</span></div>
-        </div>
-
-        <h3 class="skill-category">Ferramentas e ambientes</h3>
-
-        <div class="skill-grid">
-          <div class="skill"><b>Git</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>GitHub</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>Visual Studio Code</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>Android Studio</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>Node.js</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>Express.js</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>XAMPP</b><span>Em aprendizagem</span></div>
-          <div class="skill"><b>Packet Tracer</b><span>Em aprendizagem</span></div>
-        </div>
-
-        <p class="small-note">
-          Estas são tecnologias e ferramentas que estou a estudar,
-          explorar e utilizar ao longo da minha formação e dos meus
-          projetos pessoais. Continuo a desenvolver os meus conhecimentos
-          e competências em cada uma delas.
-        </p>
       </div>
+
     </section>
 
     <!-- PROJETOS -->
-    <section class="section projects" id="projetos">
-      <div class="section-label">03 / PROJETOS</div>
 
-      <div>
-        <h2 class="section-title">
-          Algumas coisas que<br>
-          <span class="muted">estou a construir.</span>
-        </h2>
+    <section class="section" id="projetos">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-number">03 / PROJETOS</span>
+
+          <h2>Projetos desenvolvidos</h2>
+
+          <p>
+            Alguns dos projetos que tenho desenvolvido durante o meu
+            percurso de aprendizagem.
+          </p>
+
+        </div>
 
         <div class="project-grid" id="project-grid" aria-live="polite">
-          <p class="small-note">A carregar projetos...</p>
+
+          <p class="small-note">
+            A carregar projetos...
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
     <!-- CONTACTO -->
-    <section class="contact section" id="contacto">
-      <div class="section-label">04 / CONTACTO</div>
 
-      <div>
-        <p class="eyebrow">VAMOS CONVERSAR?</p>
+    <section class="section section-alt" id="contacto">
 
-        <h2 class="section-title">
-          O próximo passo<br>
-          <span class="gradient-text">começa com uma conversa.</span>
-        </h2>
+      <div class="container">
 
-        <p class="section-text">
-          Estou à procura da minha primeira oportunidade profissional
-          em tecnologia. Se tens uma oportunidade, um projeto ou
-          simplesmente queres trocar ideias, entra em contacto.
-        </p>
+        <div class="section-heading">
 
-        <div class="hero-actions">
-          <a class="button primary" href="mailto:teu.email@example.com">
-            Enviar e-mail ↗
-          </a>
+          <span class="section-number">04 / CONTACTO</span>
 
-          <a class="button secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-            LinkedIn ↗
-          </a>
+          <h2>Vamos conversar?</h2>
+
+          <p>
+            Estou disponível para trocar ideias, aprender e conhecer
+            novas oportunidades na área da tecnologia.
+          </p>
+
         </div>
 
-        <p class="small-note">
-          Substitui o e-mail e os links pelos teus contactos reais antes de publicar.
-        </p>
+        <div class="contact-content">
+
+          <a href="mailto:jhonatasbrito.moraes@gmail.com" class="contact-item">
+            <span class="contact-label">EMAIL</span>
+            <span class="contact-value">Envie-me um email ↗</span>
+          </a>
+
+          <a href="https://github.com/jhonjk2" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-label">GITHUB</span>
+            <span class="contact-value">Ver perfil ↗</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/jhon-brito-692b16439/" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-label">LINKEDIN</span>
+            <span class="contact-value">Ver perfil ↗</span>
+          </a>
+
+        </div>
+
       </div>
+
     </section>
+
   </main>
 
   <!-- RODAPÉ -->
-  <footer>
-    <a class="brand" href="#inicio">
-      <span class="brand-mark">JM</span>
-      <span>Jhonatas<span class="accent">.</span></span>
-    </a>
 
-    <span>Feito com dedicação e código · <span id="year"></span></span>
+  <footer class="footer">
 
-    <a href="#inicio">Voltar ao topo ↑</a>
+    <div class="container footer-content">
 
-    <a class="admin-link" href="/admin">Área reservada</a>
+      <p>
+        © <span id="year"></span> Jhonatas Moraes.
+        Todos os direitos reservados.
+      </p>
+
+      <a href="#inicio" class="back-to-top">
+        Voltar ao topo ↑
+      </a>
+
+    </div>
+
   </footer>
+
 </body>
 </html>
