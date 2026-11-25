@@ -31,7 +31,7 @@ const projects = [
 
     description: 'Projeto de sistema de gestão e apresentação de senhas.',
 
-    technologies: ['HTML', 'CSS', 'JavaScript'],
+    technologies: ['C#', '.NET 8', 'JavaScript', 'HTML5', 'CSS3', 'SQL', 'PostgreSQL', 'Docker', 'JSON', 'XML'],
 
     url: 'https://sistemasegurosenhas.onrender.com/',
 
