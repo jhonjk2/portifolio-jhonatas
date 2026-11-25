@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerir projetos | Jhonatas Moraes</title><link rel="stylesheet" href="/style.css"><script src="/admin.js" defer></script>
+</head>
+<body class="admin-body">
+  <header class="admin-header"><a class="brand" href="/"><span class="brand-mark">JM</span><span>Jhonatas<span class="accent">.</span></span></a>
+    <div class="admin-header-actions"><a href="/" target="_blank" rel="noreferrer">Ver portfólio ↗</a>
+      <form method="post" action="/admin/logout"><input type="hidden" name="_csrf" value="<%= csrf %>"><button class="logout-button" type="submit">Terminar sessão</button></form></div>
+  </header>
+  <main class="admin-main">
+    <div class="admin-heading"><div><p class="eyebrow">PAINEL PRIVADO</p><h1>Gestão de projetos</h1><p class="admin-muted">Adiciona, atualiza ou retira projetos do teu portfólio.</p></div><span class="admin-count"><%= projects.length %> projeto(s)</span></div>
+    <% if (message) { %><p class="alert success"><%= message %></p><% } %>
+    <% if (error) { %><p class="alert error"><%= error %></p><% } %>
+
+    <section class="admin-panel">
+      <h2>Adicionar novo projeto</h2>
+      <form method="post" action="/admin/projects" class="admin-form project-admin-form">
+        <input type="hidden" name="_csrf" value="<%= csrf %>">
+        <label>Nome do projeto<input name="title" required maxlength="100" placeholder="Ex.: Minha aplicação"></label>
+        <label>Link do projeto<input type="url" name="url" required placeholder="https://..." maxlength="500"></label>
+        <label class="wide">Descrição<textarea name="description" required maxlength="600" rows="3" placeholder="O que faz este projeto?"></textarea></label>
+        <label>Tecnologias <span class="field-hint">Separadas por vírgulas</span><input name="technologies" placeholder="HTML, CSS, JavaScript"></label>
+        <label>Categoria<input name="category" maxlength="80" placeholder="DESENVOLVIMENTO WEB"></label>
+        <label class="wide">URL da imagem <span class="field-hint">Opcional — endereço https de uma imagem</span><input type="url" name="image_url" maxlength="500" placeholder="https://.../imagem.png"></label>
+        <label>Ícone <span class="field-hint">Usado quando não há imagem</span><input name="icon" maxlength="12" value="&lt;/&gt;"></label>
+        <label>Estilo visual<select name="visual_class"><option value="web">Web (azul/verde)</option><option value="security">Segurança</option><option value="database">Base de dados</option><option value="android">Android</option></select></label>
+        <label class="check-label"><input type="checkbox" name="published" checked> Publicar no portfólio</label>
+        <div class="wide"><button class="button primary admin-submit" type="submit">Adicionar projeto <span>＋</span></button></div>
+      </form>
+    </section>
+
+    <section class="admin-projects"><h2>Projetos existentes</h2>
+      <% if (!projects.length) { %><p class="admin-muted">Ainda não adicionaste projetos.</p><% } %>
+      <% projects.forEach((project) => { %>
+        <article class="admin-project-card">
+          <div class="admin-project-top"><div><h3><%= project.title %></h3><p class="admin-muted"><a href="<%= project.url %>" target="_blank" rel="noreferrer"><%= project.url %> ↗</a></p></div>
+            <span class="publish-state <%= project.published ? 'is-published' : 'is-hidden' %>"><%= project.published ? 'Publicado' : 'Oculto' %></span></div>
+          <details><summary>Editar este projeto</summary>
+            <form method="post" action="/admin/projects/<%= project.id %>/edit" class="admin-form project-admin-form edit-form">
+              <input type="hidden" name="_csrf" value="<%= csrf %>">
+              <label>Nome<input name="title" required maxlength="100" value="<%= project.title %>"></label>
+              <label>Link<input type="url" name="url" required maxlength="500" value="<%= project.url %>"></label>
+              <label class="wide">Descrição<textarea name="description" required maxlength="600" rows="3"><%= project.description %></textarea></label>
+              <label>Tecnologias<input name="technologies" value="<%= (project.technologies || []).join(', ') %>"></label>
+              <label>Categoria<input name="category" maxlength="80" value="<%= project.category %>"></label>
+              <label class="wide">URL da imagem<input type="url" name="image_url" maxlength="500" value="<%= project.image_url || '' %>"></label>
+              <label>Ícone<input name="icon" maxlength="12" value="<%= project.icon %>"></label>
+              <label>Estilo visual<select name="visual_class"><% ['web','security','database','android'].forEach(v => { %><option value="<%= v %>" <%= project.visual_class === v ? 'selected' : '' %>><%= v %></option><% }) %></select></label>
+              <label class="check-label"><input type="checkbox" name="published" <%= project.published ? 'checked' : '' %>> Publicar no portfólio</label>
+              <div class="wide admin-form-actions"><button class="button primary" type="submit">Guardar alterações</button></div>
+            </form>
+          </details>
+          <form method="post" action="/admin/projects/<%= project.id %>/delete"  class="delete-form">
+            <input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit" class="delete-button">Eliminar projeto</button>
+          </form>
+        </article>
+      <% }) %>
+    </section>
+    <a class="back-link" href="/">← Voltar ao portfólio público</a>
+  </main>
+</body>
+</html>
